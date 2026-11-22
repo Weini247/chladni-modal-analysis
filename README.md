@@ -2,9 +2,9 @@
 
 Experimental pattern analysis, numerical plate mechanics, and inverse mode identification.
 
-![GP2 experiment at 4,122 Hz showing the setup, registered plate, blue-excess score heatmap, and extracted sand traces.](assets/figures/experiment-4122.png)
+![GP2 experiment at 4,122 Hz showing the setup, registered plate, blue-excess score heatmap, extracted sand traces, and the calculated free-plate field for modes 26/27.](assets/figures/experiment-4122.png)
 
-*GP2 experiment at 4,122 Hz. The heatmap shows the image segmentation score.*
+*GP2 experiment at 4,122 Hz. The blue–yellow heatmap shows the image segmentation score. The last panel shows the calculated free-plate displacement for modes #26/27 and its zero contour.*
 
 **How reliably can a stationary sand pattern identify a vibrating plate's mode family?**
 

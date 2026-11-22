@@ -51,7 +51,7 @@ Die IDs der zugrunde liegenden lokalen Artefakte sind per SHA-256 im V3-Laufmani
 
 ## Bildtafeln aus zwei freigegebenen Aufnahmen
 
-- **4122 Hz** · Die Quelle ist die lokale Aufnahme `IMG_1601`. Die Tafel kombiniert einen Aufbauausschnitt aus der Originalvorschau, die perspektivisch registrierte Platte und die gespeicherten Raster `score`, `sicht` und `linien`. Die Heatmap zeigt den dimensionslosen Blauüberschuss-Score mit fester Farbskala von 0 bis 0,46. Gelb markiert das Skelett der segmentierten Sandmaske.
+- **4122 Hz** · Die Quelle ist die lokale Aufnahme `IMG_1601`. Die Tafel kombiniert einen Aufbauausschnitt aus der Originalvorschau, die perspektivisch registrierte Platte und die gespeicherten Raster `score`, `sicht` und `linien`. Die Heatmap zeigt den dimensionslosen Blauüberschuss-Score mit fester Farbskala von 0 bis 0,46. Gelb markiert das Skelett der segmentierten Sandmaske. Das letzte Feld zeigt die normierte Auslenkung und Nullkontur aus der archivierten Datei `modellfeld.npy` für die freie Platte #26/27 als numerischen Vergleich.
 - **3723 Hz** · Die Quelle ist die lokale Kontrollaufnahme `IMG_1583`. Die Modellkontur nutzt die Nullhöhe des führenden V2-Kandidaten aus `invers.json` und `inverse_felder.npz`. Die Prüfdistanz auf den zurückgehaltenen Streifen beträgt gerundet 2,99 % der Plattenseite. Die geometrische Schwelle beträgt 2,00 %.
 
 Die Veröffentlichung enthält die zwei fertigen PNG-Tafeln ohne eingebettete EXIF-Daten. Für eine Neuberechnung werden die privaten V1- und V2-Artefakte benötigt.
