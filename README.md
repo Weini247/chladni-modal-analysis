@@ -2,9 +2,9 @@
 
 Experimental pattern analysis, numerical plate mechanics, and inverse mode identification.
 
-![GP2 experiment at 4,122 Hz showing the setup, registered plate, blue-excess score heatmap, extracted sand traces, and the calculated free-plate field for modes 26/27.](assets/figures/experiment-4122.png)
+![GP2 experiment at 4,122 Hz showing the full setup photo, the geometrically rectified plate, blue-excess score heatmap, a yellow sand-trace overlay, and the calculated free-plate field for modes 26/27.](assets/figures/experiment-4122.png)
 
-*GP2 experiment at 4,122 Hz. The blue–yellow heatmap shows the image segmentation score. The last panel shows the calculated free-plate displacement for modes #26/27 and its zero contour.*
+*GP2 experiment at 4,122 Hz. The registered plate is the photo corrected for perspective. The yellow overlay shows the centerlines extracted from the blue sand mask. The last panel shows the calculated free-plate displacement for modes #26/27 and its zero contour.*
 
 **How reliably can a stationary sand pattern identify a vibrating plate's mode family?**
 
@@ -46,7 +46,7 @@ python -m chladni.checks --scope all
 python -m werkzeuge.v3_modellpaket
 ```
 
-These commands regenerate the numerical and synthetic plots without archive data. The experimental panels use approved excerpts and derived views from two GP2 exposures. The sweep and gap plots summarize the private archive. The full experimental atlas and optional local Explorer require the private data and accompanying analysis files. [Figure provenance and reproduction](dokumentation/V3_REPRODUKTION.md) · [Release provenance](RELEASE_PROVENANCE.md)
+These commands regenerate the numerical and synthetic plots without archive data. The experimental panels use approved figure panels made from two GP2 exposures. The sweep and gap plots summarize the private archive. The full experimental atlas and optional local Explorer require the private data and accompanying analysis files. [Figure provenance and reproduction](dokumentation/V3_REPRODUKTION.md) · [Release provenance](RELEASE_PROVENANCE.md)
 
 ## Scope, references and attribution
 
