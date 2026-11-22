@@ -33,3 +33,19 @@ python -m werkzeuge.v3_httpcheck
 Die letzte Zeile startet den optionalen Explorer auf Loopback. Die Analyseprovenienz bindet das Inventar, die V1- und V2-Artefakte, Konfigurationen, Module und Ausgaben im Laufmanifest über SHA-256. Annotationen liegen in einem getrennten Revisionsspeicher. Unabhängige menschliche Referenzannotationen stehen aus.
 
 [Methoden und Befunde](V3_ERGEBNISSE.md) · [Versuchsprotokoll](V3_PROTOKOLL.md) · [Oberfläche und Formate](V3_DESIGN.md)
+
+## Quellen der vier README-Abbildungen
+
+| Abbildung | Quelle | Ausgabe |
+| --- | --- | --- |
+| `mechanik.png` | `modellstudie` aus `chladni/plattenmechanik.py` mit `konfiguration/v2.json` | Relative Eigenproblemresiduen und Frequenzänderungen bei Verfeinerung in vier Modellen |
+| `synthetik.png` | Synthetischer Benchmark aus `chladni/invers_v3.py`, Modellkatalog aus `konfiguration/v2.json`, Seed und Prüfkriterien aus `konfiguration/v3.json` | Top-1- und Top-6-Treffer je Beobachtungssetting mit gleichverteilter Top-6-Referenz |
+| `sweeps.png` | Lokales `ausgaben/privat/v3/bildstudie.json`, erstellt mit `python -m chladni.forschung_v3 bilder` und `konfiguration/v3.json` | Basiswert und Minimum–Maximum über 22 Auswertungseinstellungen pro Frequenzschritt |
+| `gap.png` | Lokales `ausgaben/privat/v3/gap.json`, erstellt mit `python -m chladni.forschung_v3 gap`, der archivierten V2-Modellkonfiguration und den eingefrorenen Grenzen aus `konfiguration/v3.json` | Minimum, Median und Maximum der zurückgehaltenen Prüfdistanzen über sieben Aufnahmen je Katalogvariante |
+
+Die beiden numerischen PNGs unter `assets/figures/` stammen aus `python -m werkzeuge.v3_modellpaket`. Die beiden experimentellen PNGs verwenden den vorhandenen Export aus `chladni/figuren_v3.py` mit aggregierter Darstellung. Aus einem vorbereiteten lokalen Analysebestand erzeugt `python -m chladni.forschung_v3 figuren` die PNGs unter `ausgaben/privat/v3/figuren/`. Die Rohbilder, Einzelwerte und Annotationsdaten verbleiben im privaten Bestand. Exportiert wurden nur die gerenderten Aggregatgrafiken.
+
+Die IDs der zugrunde liegenden lokalen Artefakte sind per SHA-256 im V3-Laufmanifest belegt.
+
+- `bildstudie.json` · `99afbf7bc839cc674b32c9ee21a051a85aab471e2fa4996623c5412112e5d607`
+- `gap.json` · `29aed9ecc88e282b2dabd18ef26df976bdcb8c0530f4f65aded9ef137f27f098`

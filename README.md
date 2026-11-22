@@ -6,27 +6,33 @@ Experimental pattern analysis, numerical plate mechanics, and inverse mode ident
 
 **How reliably can a stationary sand pattern identify a vibrating plate's mode family?**
 
-| Evidence | Finding |
-| --- | --- |
-| **Experimental sweep** | The largest change between consecutive sand traces occurs at **2,093 → 2,094 Hz** in all 22 extraction settings. |
-| **Synthetic benchmark** | The known family ranks in the top six for **32/32** ideal fields, versus **1.61 expected** with uniform selection from 119 families. Rank one is correct in **12/32** fields. The fixed rule accepts five cases, one with the wrong family. |
-| **Experimental control** | **0/7** exposures at 3,720–3,726 Hz meet the fixed acceptance rule across the tested support and contact variants. |
+## Experimental Chladni Atlas
 
-## Experimental Chladni atlas
+The strongest change between adjacent sand-line skeletons in the 2,090–2,096 Hz sweep occurs at **2,093 → 2,094 Hz** in all 22 extraction settings. The settings reprocess the same photographs. A mechanical resonance would require a measured frequency response. [Experimental results](dokumentation/V3_ERGEBNISSE.md)
 
-The local archive includes 168 full photographs across 24 series. The pipeline registers the plate, masks occlusions, and compares extracted sand traces across known excitation settings. The published aggregate findings are in the [V3 report](dokumentation/V3_ERGEBNISSE.md). Running the full atlas requires the private inputs listed in the [reproduction guide](dokumentation/V3_REPRODUKTION.md).
+![Skeleton distance by frequency step for three GP2 series. The strongest change in the 2,090–2,096 Hz series is at 2,093 to 2,094 Hz.](assets/figures/sweeps.png)
 
-## Numerical plate mechanics
+## Numerical Plate Mechanics
 
-Rayleigh–Ritz models compare free edges, central constraints and distributed contact. The solver is checked against the analytic Navier spectrum and published free-plate benchmarks. Degree refinement tracks convergence, and projector overlap measures stability of near-degenerate subspaces. [Plate physics](dokumentation/PHYSIK.md)
+Rayleigh–Ritz degree refinement reduces the frequency changes between matched mode clusters at different rates for different support models. The eigenproblem residuals measure how closely each computed solution satisfies its discrete equations. The real mounting remains uncharacterized. [Plate physics and solver benchmarks](dokumentation/PHYSIK.md)
 
-## Inverse mode identification
+![Maximum relative eigenproblem residual and maximum matched-cluster frequency change at increasing Ritz degrees for four support models.](assets/figures/mechanik.png)
 
-Candidate families are ranked by geometry, with separate fit and check stripes. The decision rule can abstain. Among 1,438 distinct rasterized nodal masks, 62 are shared by more than one family. A static nodal set loses global sign and amplitude. [Methods](dokumentation/V2_METHODEN.md) · [V3 protocol](dokumentation/V3_PROTOKOLL.md)
+## Inverse Mode Identification
+
+For **32 ideal synthetic fields**, the known family appears in the **top six in 32/32** cases and **first in 12/32**. A uniform shortlist from 119 families would contain about 1.61 correct labels in total. These ranks describe simulated fields with known labels. [Inverse methods](dokumentation/V2_METHODEN.md) · [V3 test protocol](dokumentation/V3_PROTOKOLL.md)
+
+![Top-one and top-six recovery for synthetic single modes and mode pairs under four observation settings, with a uniform top-six baseline.](assets/figures/synthetik.png)
+
+## Model–Experiment Gap
+
+**0 of 7** real control exposures meet the fixed acceptance rule. With the full catalogue, the leading families have distances of **2.99–3.30% of the plate side** on the withheld stripes, above the **2.00%** limit. The plot shows the range and median across the same exposures for each catalogue variant. The abstention result leaves the physical cause open. [Control study and limitations](dokumentation/V3_ERGEBNISSE.md)
+
+![Ranges and medians of withheld-stripe distances across seven control exposures for each catalogue variant. All ranges lie beyond the two-percent distance limit.](assets/figures/gap.png)
 
 ## Reproduction and validation
 
-With Python 3.12, run these commands from the repository root in a fresh virtual environment.
+With Python 3.12, run from the repository root in a fresh virtual environment.
 
 ```sh
 python -m pip install -r requirements-lock.txt
@@ -35,10 +41,8 @@ python -m chladni.forschung_v3 showcase
 python -m werkzeuge.v3_modellpaket
 ```
 
-These commands use synthetic inputs and versioned model settings. They run the scientific and software checks, regenerate the title image, and export the numerical convergence and seeded inverse benchmark figures. The local Explorer is optional. [Reproduction and figure exports](dokumentation/V3_REPRODUKTION.md) · [Release provenance](RELEASE_PROVENANCE.md)
+These commands regenerate the title image and the numerical and synthetic plots without archive data. The sweep and gap plots summarize private GP2 inputs. The full experimental atlas and optional local Explorer require the private data and accompanying analysis files. [Figure provenance and reproduction](dokumentation/V3_REPRODUKTION.md) · [Release provenance](RELEASE_PROVENANCE.md)
 
 ## Scope, references and attribution
 
-The photographs record sand geometry and excitation settings. Identifying mechanical resonances requires a measured frequency response. Independent human reference annotations remain pending.
-
-This independent student research and software project builds on a group experiment conducted during the undergraduate GP2 physics laboratory at Heinrich Heine University Düsseldorf. The project has no official HHU endorsement and has not undergone peer review. [Physics and references](dokumentation/PHYSIK.md) · [Licensing and attribution](LICENSING.md)
+Independent human reference annotations remain pending. This independent student research and software project builds on a group experiment conducted during the undergraduate GP2 physics laboratory at Heinrich Heine University Düsseldorf. The project has no official HHU endorsement and has not undergone peer review. [References](dokumentation/PHYSIK.md) · [Licensing and attribution](LICENSING.md)

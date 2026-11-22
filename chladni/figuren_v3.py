@@ -47,14 +47,12 @@ def _sweeps(studie: dict, ziel: Path) -> None:
                 continue
             ax.vlines(i,min(v),max(v),color=BLUE,linewidth=2)
             ax.scatter(i,100*p["abstand_rel"],s=25,color=TEAL,zorder=2)
-        for j,r in enumerate(s["wiederholungen"]):
-            ax.scatter(-.65-.16*j,100*r["abstand_rel"],s=38,marker="D",color=GOLD,zorder=2)
         ax.set_xticks(range(len(paar)),ticks,rotation=58,ha="right",fontsize=8)
-        ax.set_xlim(-1,len(paar)-.5)
+        ax.set_xlim(-.5,len(paar)-.5)
         ax.set_title(titel,loc="left",fontsize=12,fontweight="bold",pad=10)
         _achsen(ax)
     achsen[0].set_ylabel("Mean skeleton distance [% of plate side]")
-    fig.text(.075,.045,"● Baseline    │ Extraction range    ◆ Separate exposure at the same frequency",fontsize=9)
+    fig.text(.075,.045,"● Baseline    │ Range across extraction settings    Each step is labelled in Hz.",fontsize=9)
     speichere(fig,ziel/"sweeps")
 
 
@@ -68,21 +66,20 @@ def _gap(g: dict,ziel: Path) -> None:
     fig,ax=plt.subplots(figsize=(9.15,5.8))
     fig.subplots_adjust(top=.77,bottom=.18,left=.255,right=.96)
     _kopf(fig,"The control set remains outside the fit limit",
-          "3,720–3,726 Hz archive  |  Seven real exposures in each catalogue ablation")
+          "3,720–3,726 Hz archive  |  Summary of seven exposures per catalogue ablation")
     limit=100*g["schwellen"]["max_test_rel"]
     ax.axvspan(0,limit,color="#d9ece8",alpha=.65)
     ax.axvline(limit,color=TEAL,linewidth=1.4,linestyle="--")
     for i,r in enumerate(rows):
         v=[100*p["prueffehler_rel"] for p in r["faelle"] if p["prueffehler_rel"] is not None]
-        y=i+np.linspace(-.12,.12,len(v))
-        ax.scatter(v,y,s=20,facecolor="none",edgecolor=BLUE,linewidth=.9,zorder=3)
-        ax.scatter(np.median(v),i,marker="|",s=125,color=GOLD,zorder=4)
+        ax.hlines(i,min(v),max(v),color=BLUE,linewidth=2,zorder=3)
+        ax.scatter(np.median(v),i,s=28,color=GOLD,zorder=4)
     ax.set_yticks(range(len(rows)),[names[r["name"]] for r in rows])
     ax.invert_yaxis()
     ax.set_xlim(0,None)
     ax.set_xlabel("Leading family's distance on withheld stripes [% of plate side]")
     _achsen(ax,"x")
-    fig.text(.075,.055,"○ Exposure     │ Median     Dashed line marks the fixed 2% limit. A separate family-gap rule also applies.",fontsize=9)
+    fig.text(.075,.055,"─ Range across exposures    ● Median    Dashed line marks the 2% distance limit.",fontsize=9)
     speichere(fig,ziel/"gap")
 
 
