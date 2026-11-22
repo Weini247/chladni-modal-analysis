@@ -30,9 +30,9 @@ For **32 ideal synthetic fields**, the known family appears in the **top six in 
 
 **0 of 7** real control exposures meet the fixed acceptance rule. With the full catalogue, the leading families have distances of **2.99–3.30% of the plate side** on the withheld stripes, above the **2.00%** limit. The plot shows the range and median across the same exposures for each catalogue variant. The abstention result leaves the physical cause open. [Control study and limitations](dokumentation/V3_ERGEBNISSE.md)
 
-At **3,723 Hz**, the leading candidate's zero contour misses much of the visible sand pattern. Its withheld distance is **2.99%**, so the rule rejects it.
+At **3,723 Hz**, the yellow traces show the extracted sand skeleton. The coral straight lines are the analytic zeros of the leading cosine-product candidate. Its distance on the withheld raster stripes is **2.99%**, so it fails the distance criterion.
 
-![Control exposure at 3,723 Hz showing the registered plate, extracted sand traces, and rejected model's zero contour.](assets/figures/control-3723.png)
+![Control exposure at 3,723 Hz showing the registered plate, yellow sand traces, and the rejected model's analytic zero lines in coral.](assets/figures/control-3723.png)
 
 ![Ranges and medians of withheld-stripe distances across seven control exposures for each catalogue variant. All ranges lie beyond the two-percent distance limit.](assets/figures/gap.png)
 

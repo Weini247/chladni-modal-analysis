@@ -65,7 +65,7 @@ def _gap(g: dict,ziel: Path) -> None:
     rows=[r for r in g["ablationsstudien"] if r["name"] in names]
     fig,ax=plt.subplots(figsize=(9.15,5.8))
     fig.subplots_adjust(top=.77,bottom=.18,left=.255,right=.96)
-    _kopf(fig,"The control set remains outside the fit limit",
+    _kopf(fig,"All control distances exceed the limit",
           "3,720–3,726 Hz archive  |  Summary of seven exposures per catalogue ablation")
     limit=100*g["schwellen"]["max_test_rel"]
     ax.axvspan(0,limit,color="#d9ece8",alpha=.65)
@@ -126,7 +126,7 @@ def _synthetik(g: dict,ziel: Path) -> None:
         ax.set_ylim(0,17)
         ax.set_title(titel,loc="left",fontsize=12,fontweight="bold",pad=8)
         _achsen(ax)
-    achsen[0].set_ylabel("Fields containing the known family")
+    achsen[0].set_ylabel("Cases with the correct family in top k")
     achsen[0].legend(loc="upper center",bbox_to_anchor=(1.02,-.16),ncol=3,frameon=False,fontsize=9)
     speichere(fig,ziel/"synthetik")
 
