@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Local experimental and computational laboratory for Chladni patterns.">
+  <meta name="color-scheme" content="dark">
+  <title>Chladni Research Lab</title>
+  <link href="/labor.css" rel="stylesheet">
+  <script type="module" src="/labor.js"></script>
+</head>
+<body>
+  <a class="skip" href="#app">Skip to research view</a>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" aria-label="Chladni Research Lab home"><span class="brandmark" aria-hidden="true"></span><span>Chladni<span class="brand-sub">Research Lab</span></span></a>
+      <nav id="nav" aria-label="Research views">
+        <a href="#atlas">Atlas</a><a href="#modes">Mode lab</a><a href="#inverse">Inversion</a>
+        <a href="#gap">Model gap</a><a href="#annotation">Annotate</a><a href="#validation">Validation</a>
+      </nav>
+      <span class="local"><i></i> Local workspace</span>
+    </div>
+  </header>
+  <main id="app" tabindex="-1" class="shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">GP2 ARCHIVE · HHU DÜSSELDORF</p>
+        <h1>Chladni<br>Research Lab</h1>
+        <p class="lead">What can a sand pattern tell us about a vibrating plate?</p>
+        <p class="intro">Explore the GP2 photo archive, compute plate modes and trace where model predictions diverge from the experiment.</p>
+        <div class="actions"><a class="button primary" href="#atlas">Explore the atlas</a><a class="button subtle" href="#gap">Inspect the model gap</a></div>
+      </div>
+      <figure class="hero-figure">
+        <img src="/foto/IMG_1601/platte" width="512" height="512" alt="Blue sand bands on the registered square metal plate at 4122 Hz.">
+        <figcaption><span><strong>4,122 Hz</strong> <span class="muted">recorded excitation</span></span><code>IMG_1601</code></figcaption>
+      </figure>
+    </section>
+    <section id="home-evidence" class="evidence" aria-label="Verified collection counts"><p class="subtle-text">Loading archive evidence…</p></section>
+    <section class="paths" aria-label="Research workspaces">
+      <a class="path" href="#atlas"><span class="tag">EXPERIMENT</span><h2>Experimental atlas</h2><p>Follow recorded frequency steps and inspect original frames, sand masks and line traces.</p></a>
+      <a class="path" href="#modes"><span class="tag violet">SIMULATION</span><h2>Numerical mode lab</h2><p>Compare boundary conditions, inspect eigenfields and vary the central contact.</p></a>
+      <a class="path" href="#inverse"><span class="tag ochre">INFERENCE</span><h2>Inverse reconstruction</h2><p>Rank competing mode families and see which diagnostics lead to abstention.</p></a>
+    </section>
+  </main>
+  <footer class="footer"><div>Student research · GP2 archive</div><a href="#validation">Methods and validation</a></footer>
+</body>
+</html>

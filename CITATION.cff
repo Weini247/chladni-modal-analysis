@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this repository and record the commit used."
+title: Chladni Modal Analysis
+type: software
+authors:
+  - given-names: Jonas S.
+    family-names: Weingart
+repository-code: https://github.com/Weini247/chladni-modal-analysis

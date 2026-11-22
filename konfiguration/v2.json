@@ -1,0 +1,35 @@
+{
+  "schema": 2,
+  "atlas": {
+    "max_schritt_hz": 2
+  },
+  "platte": {
+    "seite_m": 0.18,
+    "dicke_m": 0.003,
+    "e_pa": 69000000000,
+    "nu": 0.35,
+    "rho_kg_m3": 2700
+  },
+  "anschluss": {
+    "radius_m": 0.006,
+    "vertikal_n_m": 200000,
+    "rotation_nm": 1.5,
+    "verteilte_masse_kg": 0.018
+  },
+  "invers": {
+    "raster": 64,
+    "grad": 20,
+    "moden": 30,
+    "winkel_schritt_grad": 20,
+    "abstand_kappung_rel": 0.08,
+    "regularisierung_rel": 0.0025,
+    "nahe_frequenzen_rel": 0.025,
+    "seed_kalibration": 52145,
+    "seed_test": 79139,
+    "anzahl_klasse": 28
+  },
+  "experimente": {
+    "atlas_holdout": "Bilder 2030",
+    "invers_real_holdout": "Bilder 3720"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema": 3,
+  "serien": [
+    "Bilder 4120",
+    "Bilder 2030",
+    "Bilder 3720"
+  ],
+  "kontrollserie": "Bilder 3720",
+  "bild": {
+    "raster": 512,
+    "schwelle_delta": 0.02,
+    "belichtung_delta": 0.12,
+    "kontrast_delta": 0.2,
+    "farbe_delta": 0.08,
+    "eckversatz_rel": 0.007,
+    "zentrum_delta_rel": 0.012,
+    "schraubenradius_delta": 0.015,
+    "schatten": 0.33,
+    "glanz": 0.2,
+    "morph_radius_px": 2
+  },
+  "gap": {
+    "seed": 922671,
+    "referenzgrad": 24,
+    "anzahl_pro_art": 16,
+    "band_raster_px": 3,
+    "toleranz_raster_px": 2,
+    "schwellen": {
+      "max_test_rel": 0.02,
+      "min_abstand_rel": 0.0015
+    },
+    "kontakt_faktoren": [
+      0.5,
+      2
+    ],
+    "radius_faktor": 1.5
+  }
+}
