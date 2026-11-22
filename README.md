@@ -2,7 +2,9 @@
 
 Experimental pattern analysis, numerical plate mechanics, and inverse mode identification.
 
-![Simulated free square plate. Blue and rust indicate signed modal displacement. The dark curve is the zero contour.](ausgaben/modelle/v3-hero.png)
+![GP2 experiment at 4,122 Hz showing the setup, registered plate, blue-excess score heatmap, and extracted sand traces.](assets/figures/experiment-4122.png)
+
+*GP2 experiment at 4,122 Hz. The heatmap shows the image segmentation score.*
 
 **How reliably can a stationary sand pattern identify a vibrating plate's mode family?**
 
@@ -28,6 +30,10 @@ For **32 ideal synthetic fields**, the known family appears in the **top six in 
 
 **0 of 7** real control exposures meet the fixed acceptance rule. With the full catalogue, the leading families have distances of **2.99–3.30% of the plate side** on the withheld stripes, above the **2.00%** limit. The plot shows the range and median across the same exposures for each catalogue variant. The abstention result leaves the physical cause open. [Control study and limitations](dokumentation/V3_ERGEBNISSE.md)
 
+At **3,723 Hz**, the leading candidate's zero contour misses much of the visible sand pattern. Its withheld distance is **2.99%**, so the rule rejects it.
+
+![Control exposure at 3,723 Hz showing the registered plate, extracted sand traces, and rejected model's zero contour.](assets/figures/control-3723.png)
+
 ![Ranges and medians of withheld-stripe distances across seven control exposures for each catalogue variant. All ranges lie beyond the two-percent distance limit.](assets/figures/gap.png)
 
 ## Reproduction and validation
@@ -37,11 +43,10 @@ With Python 3.12, run from the repository root in a fresh virtual environment.
 ```sh
 python -m pip install -r requirements-lock.txt
 python -m chladni.checks --scope all
-python -m chladni.forschung_v3 showcase
 python -m werkzeuge.v3_modellpaket
 ```
 
-These commands regenerate the title image and the numerical and synthetic plots without archive data. The sweep and gap plots summarize private GP2 inputs. The full experimental atlas and optional local Explorer require the private data and accompanying analysis files. [Figure provenance and reproduction](dokumentation/V3_REPRODUKTION.md) · [Release provenance](RELEASE_PROVENANCE.md)
+These commands regenerate the numerical and synthetic plots without archive data. The experimental panels use approved excerpts and derived views from two GP2 exposures. The sweep and gap plots summarize the private archive. The full experimental atlas and optional local Explorer require the private data and accompanying analysis files. [Figure provenance and reproduction](dokumentation/V3_REPRODUKTION.md) · [Release provenance](RELEASE_PROVENANCE.md)
 
 ## Scope, references and attribution
 

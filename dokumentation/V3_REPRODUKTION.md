@@ -7,11 +7,10 @@ Python 3.12 in einer eigenen virtuellen Umgebung verwenden. Die Befehle aus der 
 ```sh
 python -m pip install -r requirements-lock.txt
 python -m chladni.checks --scope all
-python -m chladni.forschung_v3 showcase
 python -m werkzeuge.v3_modellpaket
 ```
 
-Die Tests umfassen analytische Eigenwerte, Residuen, Unterraumvergleiche, synthetische Bildverarbeitung und Inversion. Das Modellpaket verwendet die V2-Modellparameter sowie den festgelegten V3-Seed und die gleichen Kriterien für die synthetische Benchmark-Auswertung. Es schreibt `mechanik.json`, `synthetik.json` und beide Abbildungen in PNG, SVG und PDF unter `ausgaben/privat/modellpaket`. Mit `--ziel` lässt sich ein anderer Ausgabeordner wählen. Die Titelgrafik ist eine numerische Simulation.
+Die Tests umfassen analytische Eigenwerte, Residuen, Unterraumvergleiche, synthetische Bildverarbeitung und Inversion. Das Modellpaket verwendet die V2-Modellparameter sowie den festgelegten V3-Seed und die gleichen Kriterien für die synthetische Benchmark-Auswertung. Es schreibt `mechanik.json`, `synthetik.json` und beide Abbildungen in PNG, SVG und PDF unter `ausgaben/privat/modellpaket`. Mit `--ziel` lässt sich ein anderer Ausgabeordner wählen. Ein separater Simulationsbanner ist weiterhin mit `python -m chladni.forschung_v3 showcase` erzeugbar.
 
 Die Berechnungen wurden mit einem BLAS-Thread geprüft. Reproduzierbarkeit auf Dateiebene bezieht sich auf dieselben Python-, Bibliotheks- und Font-Versionen auf derselben Plattform. Numerische Toleranzen sind in den Tests dokumentiert.
 
@@ -49,3 +48,10 @@ Die IDs der zugrunde liegenden lokalen Artefakte sind per SHA-256 im V3-Laufmani
 
 - `bildstudie.json` · `99afbf7bc839cc674b32c9ee21a051a85aab471e2fa4996623c5412112e5d607`
 - `gap.json` · `29aed9ecc88e282b2dabd18ef26df976bdcb8c0530f4f65aded9ef137f27f098`
+
+## Bildtafeln aus zwei freigegebenen Aufnahmen
+
+- **4122 Hz** · Die Quelle ist die lokale Aufnahme `IMG_1601`. Die Tafel kombiniert einen Aufbauausschnitt aus der Originalvorschau, die perspektivisch registrierte Platte und die gespeicherten Raster `score`, `sicht` und `linien`. Die Heatmap zeigt den dimensionslosen Blauüberschuss-Score mit fester Farbskala von 0 bis 0,46. Gelb markiert das Skelett der segmentierten Sandmaske.
+- **3723 Hz** · Die Quelle ist die lokale Kontrollaufnahme `IMG_1583`. Die Modellkontur nutzt die Nullhöhe des führenden V2-Kandidaten aus `invers.json` und `inverse_felder.npz`. Die Prüfdistanz auf den zurückgehaltenen Streifen beträgt gerundet 2,99 % der Plattenseite. Die geometrische Schwelle beträgt 2,00 %.
+
+Die Veröffentlichung enthält die zwei fertigen PNG-Tafeln ohne eingebettete EXIF-Daten. Für eine Neuberechnung werden die privaten V1- und V2-Artefakte benötigt.
